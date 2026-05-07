@@ -14,8 +14,8 @@
       </button>
 
       <div class="header-icons">
-        <a aria-label="Send email" href="syb0106@naver.com"><i class="icon fa fa-envelope"></i></a>
-        <a aria-label="My Phone number" target="_blank" href="+82)1030360080"><i class="icon fa fa-solid fa-phone" aria-hidden="true"></i></a>
+        <a aria-label="Send email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"></i></a>
+        <a aria-label="My Phone number" target="_blank" href="tel:{{ site.phone_number | replace: ' ', '' | replace: '-', '' }}"><i class="icon fa fa-solid fa-phone" aria-hidden="true"></i></a>
         <a aria-label="My Linkedin" target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="icon fa fa-brands fa-linkedin" aria-hidden="true"></i></a>
         <a aria-label="My Github" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
         <!-- 이력서 다운로드 링크 (Core Requirement) -->
