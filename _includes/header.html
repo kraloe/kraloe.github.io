@@ -1,14 +1,25 @@
 <div id="particles-js">
   <div class="header">
+      <!-- 학생 이미지 추가 (Core Requirement) -->
+      <img src="{{ '/assets/img/profile.jpg' | relative_url }}" class="profile-img" alt="{{ site.username }}">
+      
       <h1>
         <span class="site-title">{{site.username}}</span>
         <span class="site-description">{{site.user_title}}</span>
       </h1>
+
+      <!-- 네비게이션 토글 버튼 -->
+      <button class="nav-toggle" aria-label="toggle navigation">
+          <span class="hamburger"></span>
+      </button>
+
       <div class="header-icons">
         <a aria-label="Send email" href="syb0106@naver.com"><i class="icon fa fa-envelope"></i></a>
         <a aria-label="My Phone number" target="_blank" href="+82)1030360080"><i class="icon fa fa-solid fa-phone" aria-hidden="true"></i></a>
-        <a aria-label="My Linkedin" target="_blank" href="www.linkedin.com/in/hyunseok-choi/"><i class="icon fa fa-brands fa-linkedin" aria-hidden="true"></i></a>
-        <a aria-label="My Github" target="_blank" href="github.com/KrAloe"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        <a aria-label="My Linkedin" target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="icon fa fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        <a aria-label="My Github" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        <!-- 이력서 다운로드 링크 (Core Requirement) -->
+        <a aria-label="Download Resume" href="{{ site.resume_url | relative_url }}" download><i class="icon fa fa-file-pdf-o"></i></a>
       </div>
       <div class="header-links">
         <a class="link" href="#about" data-scroll>About Me</a>

@@ -6,12 +6,25 @@ description: Thank you for visiting my portfolio
 
 # User settings
 username: Hyunseok Choi
-user_description: Software Developer, Game Developer
-user_title: Game Designer, Software Developer, Game Developer, QA, Network Admin
+user_description: "I am a Software and Game Developer specializing in real-time graphics and system architecture. Currently exploring WebGL and OpenGL procedural modeling."
+user_title: "Game Developer | Software Engineer"
 email:  syb0106@naver.com
-phone number: +82 10 3036 0080
-github_username:  KrAloe's Portfolio
-linkedin:   hyunseok choi | LinkedIn
+phone_number: "+82 10 3036 0080"
+github_username: kraloe
+linkedin_username: hyunseok-choi
+resume_url: "/assets/resume.pdf"
+
+# Portfolio Projects (Assignment Topics)
+projects:
+  - title: "Procedural Geometric Modeling"
+    description: "Generating primitives (Plane, Cube, Sphere) using OpenGL."
+    url: "/procedural-modeling/"
+  - title: "Fog & Shading"
+    description: "Linear/Exponential Fog and Toon/Cell Shading implementations."
+    url: "/shading-effects/"
+  - title: "Noise & Textures"
+    description: "Value and Perlin noise for mesh and texture generation."
+    url: "/noise-generation/"
 
 # Google-analytics
 google-analytics:
