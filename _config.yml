@@ -7,12 +7,12 @@ description: Thank you for visiting my portfolio
 # User settings
 username: Hyunseok Choi
 user_description: "I am a Software and Game Developer specializing in real-time graphics and system architecture. Currently exploring WebGL and OpenGL procedural modeling."
-user_title: "Game Developer | Software Engineer"
+user_title: "Game Developer"
 email:  syb0106@naver.com
 phone_number: "+82 10 3036 0080"
 github_username: kraloe
 linkedin_username: hyunseok-choi
-resume_url: "/assets/resume.pdf"
+resume_url: "/assets/resume.pdf" # PDF 파일이 이 경로에 있어야 합니다.
 
 # Portfolio Projects (Assignment Topics)
 projects:

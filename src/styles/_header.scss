@@ -1,5 +1,5 @@
 #particles-js {
-  background: $main;
+  background: #2c3e50; // 기본 배경색을 더 차분하게 변경
   display: flex;
   vertical-align: bottom;
   width: 100%;
@@ -16,44 +16,39 @@
 .header {
   z-index: 1;
   text-align: center;
-  color:#FFF;
+  color: #FFF;
   position: absolute;
-  top: 50%;
+  top: 45%; // 중앙보다 약간 위로 올려서 아래 내용과 겹침 방지
   left: 50%;
-  margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width: 90%;
 
   .profile-img {
     display: block;
     margin: 0 auto 20px;
-    width: 120px;  // 크기를 조금 줄였습니다
-    height: 120px;
+    width: 150px; // 적절한 사진 크기 고정
+    height: 150px;
     border-radius: 50%;
-    border: 3px solid #FFF;
+    border: 4px solid #FFF;
     object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
 
   .site-title {
-    font-size: 32px; // 모바일 크기 축소
+    font-size: 36px; 
     display: block;
-    line-height: 1;
+    line-height: 1.2;
     color: #FFF;
-    @media only screen and (min-width:$cut){
-      margin: 0;
-      font-size: 60px; // 데스크탑 크기 축소
+    font-weight: 700;
+    @media only screen and (min-width: $cut) {
+      font-size: 56px; // 가독성 좋은 크기로 축소
     }
   }
   .site-description {
-    font-size: 16px; // 설명 텍스트 축소
+    font-size: 18px;
     display: block;
-    line-height: 1;
-    color: #FFF;
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 24px;
-    }
   }
 }
 
