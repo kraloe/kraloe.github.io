@@ -1,7 +1,7 @@
 <div id="particles-js">
   <div class="header">
-      <!-- 프로필 이미지 -->
-      <img src="{{ '/assets/img/profile.jpg' | relative_url }}" class="profile-img" alt="Profile">
+      <!-- 학생 이미지 추가 (Core Requirement) -->
+      <img src="{{ '/assets/img/profile.jpg' | relative_url }}" class="profile-img" alt="{{ site.username }}">
       
       <h1>
         <span class="site-title">{{site.username}}</span>
@@ -14,9 +14,10 @@
       </button>
 
       <div class="header-icons">
-        <a title="Email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"></i></a>
-        <a title="LinkedIn" target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="icon fa fa-linkedin"></i></a>
-        <a title="GitHub" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="icon fa fa-github-alt"></i></a>
+        <a aria-label="Send email" href="mailto:{{ site.email }}"><i class="icon fa fa-envelope"></i></a>
+        <a aria-label="My Phone number" target="_blank" href="tel:{{ site.phone_number | replace: ' ', '' | replace: '-', '' }}"><i class="icon fa fa-solid fa-phone" aria-hidden="true"></i></a>
+        <a aria-label="My Linkedin" target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}"><i class="icon fa fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        <a aria-label="My Github" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
         <!-- 이력서 다운로드 링크 (Core Requirement) -->
         <a aria-label="Download Resume" href="{{ site.resume_url | relative_url }}" download><i class="icon fa fa-file-pdf-o"></i></a>
       </div>
