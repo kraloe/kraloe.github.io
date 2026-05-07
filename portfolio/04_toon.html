@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../img/face.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toon / Cell Shading | Hyunseok Choi</title>
+    <link rel="stylesheet" href="../external/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../img/cout.jpg" alt=""></div>
+        <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html"          class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="../index.html#skills"   class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="../index.html#about"    class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="../index.html#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="../index.html#resume"   class="nav__link">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1 class="section__title section__title--intro">
+            Project <strong>Toon / Cell Shading</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">3D Graphics · WebGL</p>
+        <img src="../img/portfolio_thumbnails/04_toon.jpg" alt="Toon / Cell Shading project screenshot" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <h2>Project Overview</h2>
+        <p>Toon (cell) shading replaces smooth Phong lighting with discrete colour bands to produce a hand-drawn cartoon aesthetic. This project implements the technique in a GLSL fragment shader by quantising the diffuse intensity into N discrete steps and optionally adding a silhouette outline pass using back-face inflation in the vertex shader.</p>
+
+        <h2>Tasks Completed</h2>
+        <ul>
+            <li>Computed diffuse intensity using the Lambertian dot-product (N · L) and quantised it into configurable discrete bands.</li>
+            <li>Added a specular highlight clamp to produce a single hard specular dot.</li>
+            <li>Implemented an outline pass by rendering back-faces scaled outward along normals with a solid dark colour.</li>
+            <li>Exposed sliders for band count, outline thickness, and light direction.</li>
+            <li>Compared output against standard Phong shading to validate the stylistic difference.</li>
+        </ul>
+
+        <h2>Reflection</h2>
+        <p>The trickiest part was the silhouette pass — scaling geometry along normals in clip space rather than world space avoids distortion on non-uniform objects. Getting the band quantisation to look clean (not aliased) required a small smoothstep around each threshold, which blends between hard bands.</p>
+    </div>
+
+    <div class="portfolio-item-individual">
+        <h2>Demo</h2>
+        <iframe id="demo" src="../webgl/D04ToonShading/graphics_fun.html?start=toon" tabindex="-1"></iframe>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:syb0106@naver.com" class="footer__link">syb0106@naver.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/hyunseok-choi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/KrAloe" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
+    </footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>

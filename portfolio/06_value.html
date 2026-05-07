@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../img/face.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Noise | Hyunseok Choi</title>
+    <link rel="stylesheet" href="../external/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../img/cout.jpg" alt=""></div>
+        <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html"          class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="../index.html#skills"   class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="../index.html#about"    class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="../index.html#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="../index.html#resume"   class="nav__link">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1 class="section__title section__title--intro">
+            Project <strong>Value Noise</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">3D Graphics · WebGL</p>
+        <img src="../img/portfolio_thumbnails/06_value.jpg" alt="Value Noise project screenshot" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <h2>Project Overview</h2>
+        <p>Value noise generates smooth pseudo-random patterns by assigning random scalar values to integer lattice points and interpolating between them. This project implements 2D and 3D value noise entirely in a GLSL fragment shader and uses it to generate procedural textures and to displace mesh vertices.</p>
+
+        <h2>Tasks Completed</h2>
+        <ul>
+            <li>Implemented a GLSL hash function to assign pseudo-random values to integer grid cells.</li>
+            <li>Interpolated between cell values using smoothstep (quintic curve) for smooth results.</li>
+            <li>Layered multiple octaves of noise (fBm) with adjustable lacunarity and persistence.</li>
+            <li>Applied the noise to drive both texture colour and vertex displacement.</li>
+            <li>Added real-time sliders for octave count, frequency, amplitude, and animation speed.</li>
+        </ul>
+
+        <h2>Reflection</h2>
+        <p>Value noise is simpler than gradient noise but can exhibit a blocky 'grid artifact' at low octave counts. Understanding why — the noise value is highest/lowest exactly at lattice corners — clarified the motivation for Perlin's gradient approach in the next assignment.</p>
+    </div>
+
+    <div class="portfolio-item-individual">
+        <h2>Demo</h2>
+        <iframe id="demo" src="../webgl/D06ValueNoise/graphics_fun.html?start=value" tabindex="-1"></iframe>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:syb0106@naver.com" class="footer__link">syb0106@naver.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/hyunseok-choi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/KrAloe" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
+    </footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>

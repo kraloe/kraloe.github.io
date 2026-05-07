@@ -1,3 +1,319 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="img/face.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyunseok Choi | Game &amp; Graphics Developer</title>
+
+    <link rel="stylesheet" href="external/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        #particle-canvas {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+        .intro { position: relative; overflow: hidden; }
+        .intro > *:not(#particle-canvas) { position: relative; z-index: 1; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.4em; max-width: 1000px; margin: 0 auto 2.5em;
+        }
+        .skill-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 8px; padding: 1.4em 1.2em; text-align: center;
+        }
+        .skill-card h3 {
+            margin: 0 0 .5em; font-size: .9rem;
+            letter-spacing: .06em; text-transform: uppercase; color: var(--clr-accent);
+        }
+        .skill-card p { margin: 0; font-size: .88rem; opacity: .85; line-height: 1.55; }
+        .skill-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: .4em; margin-bottom: .6em; }
+        .skill-icons img { width: 34px; height: 34px; }
+        .game-exp-list { list-style: none; padding: 0; margin: 0; }
+        .game-exp-list li { padding: .32em 0; border-bottom: 1px solid rgba(0,0,0,.08); font-size: .94rem; }
+        .game-exp-list li:last-child { border-bottom: none; }
+        .game-tag {
+            display: inline-block; font-size: .73rem;
+            background: rgba(22,224,189,.15); color: #0aab8a;
+            border-radius: 4px; padding: .08em .45em; margin-right: .35em;
+            font-family: "Source Code Pro", monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="img/cout.jpg" alt=""></div>
+        <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home"     class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#skills"   class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="#about"    class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="#resume"   class="nav__link">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro" id="home">
+        <canvas id="particle-canvas"></canvas>
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Hyunseok Choi</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">
+            Game Developer &nbsp;&middot;&nbsp; Graphics Programmer &nbsp;&middot;&nbsp; Network Admin
+        </p>
+        <img src="img/face.jpg" alt="A picture of Hyunseok Choi smiling" class="intro__img" />
+    </section>
+
+    <section class="my-services" id="skills">
+        <h2 class="section__title section__title--services">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Graphics &amp; Engine</h3>
+                <div class="skill-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg" alt="OpenGL">
+                </div>
+                <p>Unreal Engine 5, OpenGL / WebGL, Custom Engine, Blueprint &amp; C++ Gameplay Systems</p>
+            </div>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <div class="skill-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C">
+                </div>
+                <p>C++, C &mdash; physics simulation, AI behaviour, rendering pipeline, game-loop architecture</p>
+            </div>
+            <div class="skill-card">
+                <h3>3D Graphics (WebGL)</h3>
+                <div class="skill-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg" alt="WebGL">
+                </div>
+                <p>Fog shading, Toon/Cell shading, Shadow Mapping, Procedural Geometry, Perlin &amp; Value Noise</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools &amp; DevOps</h3>
+                <div class="skill-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redhat/redhat-original.svg" alt="RedHat">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/centos/centos-original.svg" alt="CentOS">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" alt="Visual Studio">
+                </div>
+                <p>Git, Linux (RedHat / CentOS), Cisco Networking, Visual Studio, GitHub Pages</p>
+            </div>
+            <div class="skill-card">
+                <h3>Game Design</h3>
+                <p>Level design, music composition, SFX integration, localisation (KO&harr;EN), QA &amp; playtesting</p>
+            </div>
+            <div class="skill-card">
+                <h3>Localisation &amp; QA</h3>
+                <p>Path of Exile volunteer translator (Korean, 2017&ndash;2019). Manual &amp; automated testing, bug triage</p>
+            </div>
+        </div>
+        <a href="#projects" class="btn">See Projects</a>
+    </section>
+
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about">
+            Student Game &amp; Graphics Programmer &mdash; DigiPen Institute of Technology
+        </p>
+        <div class="about-me__body">
+            <p>
+                I'm Hyunseok Choi, a Computer Science (RTIS) student at DigiPen with a passion for real-time
+                graphics, game systems, and the intersection of engineering and design. I enjoy building things
+                from scratch &mdash; from writing custom rendering pipelines in OpenGL to composing original game soundtracks.
+            </p>
+            <p>
+                Outside the editor I'm a longtime competitive gamer. Highlights include reaching
+                <strong>Rank 2 worldwide</strong> in Tekken Card Tournament, playing Hearthstone at a professional
+                level, and logging 30,000+ StarCraft II Co-op games.
+            </p>
+            <h3 style="margin-top:1.4em;font-size:1rem;text-transform:uppercase;letter-spacing:.05em;">Game Experience</h3>
+            <ul class="game-exp-list">
+                <li><span class="game-tag">Rank 2 WW</span>Tekken Card Tournament (2013)</li>
+                <li><span class="game-tag">Pro Player</span>Hearthstone (June 2014&ndash;2017)</li>
+                <li><span class="game-tag">Translator</span>Path of Exile &mdash; Korean volunteer (2017&ndash;2019)</li>
+                <li><span class="game-tag">30k+ games</span>StarCraft I &amp; II Co-op, Lv.1000+ (2000&ndash;Present)</li>
+                <li><span class="game-tag">Long-term</span>Cytus I &amp; II rhythm game (April 2013&ndash;Present)</li>
+                <li><span class="game-tag">Advance Team</span>Dungeon &amp; Fighter (2005&ndash;2021)</li>
+            </ul>
+        </div>
+        <img src="img/tall.jpg" alt="Picture of Hyunseok Choi" class="about-me__img" />
+    </section>
+
+    <section class="my-projects" id="projects">
+        <h2 class="section__title section__title--projects">My Projects</h2>
+        <p class="section__subtitle section__subtitle--projects">Graphics coursework &amp; game projects</p>
+        <div class="portfolio">
+            <a href="portfolio/01_hello.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/01_hello.jpg" alt="Hello Quad" class="portfolio__img" />
+            </a>
+            <a href="portfolio/02_meshes.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/02_meshes.jpg" alt="Procedural Geometric Modeling" class="portfolio__img" />
+            </a>
+            <a href="portfolio/03_fog.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/03_fog.jpg" alt="Fog Shading" class="portfolio__img" />
+            </a>
+            <a href="portfolio/04_toon.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/04_toon.jpg" alt="Toon Shading" class="portfolio__img" />
+            </a>
+            <a href="portfolio/05_shadow.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/05_shadow.jpg" alt="Shadow Mapping" class="portfolio__img" />
+            </a>
+            <a href="portfolio/06_value.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/06_value.jpg" alt="Value Noise" class="portfolio__img" />
+            </a>
+            <a href="portfolio/07_gradient.html" class="portfolio__item">
+                <img src="img/portfolio_thumbnails/07_gradient.jpg" alt="Gradient / Perlin Noise" class="portfolio__img" />
+            </a>
+            <a href="https://github.com/ido-013/SnT" target="_blank" class="portfolio__item">
+                <img src="img/SnT.png" alt="SnT — 3D Casual Racing (Unreal Engine 5)" class="portfolio__img" />
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/WWSC.png" alt="WWSC — 2D Platformer (C++ / Raylib)" class="portfolio__img" />
+            </a>
+        </div>
+    </section>
+
+    <section class="my-resume" id="resume">
+        <h2 class="section__title section__title--resume">Resume</h2>
+        <a target="_blank" href="docs/Resume.pdf"><i class="far fa-file-pdf"></i> Download PDF</a>
+        <div class="resume-section">
+            <h3>Education</h3>
+            <div class="resume-item">
+                <p>
+                    <b>Bachelor of Science in Computer Science in Real-Time Interactive Simulation</b><br>
+                    2023 &ndash; Present<br>
+                    <em>Daegu, Korea &amp; Redmond, WA, USA &mdash; DigiPen Institute of Technology</em><br>
+                    Relevant Courses: Real-Time Graphics, Game Engine Architecture, Computer Networks, Operating Systems, Data Structures &amp; Algorithms
+                </p>
+            </div>
+            <h3>Projects</h3>
+            <div class="resume-item">
+                <p>
+                    <b>Lead Developer &amp; Composer &mdash; SnT (Speed &amp; Track)</b><br>
+                    2024 &nbsp;&middot;&nbsp; <em>DigiPen Institute of Technology</em><br>
+                    3D casual racing game in Unreal Engine 5. Core Blueprint/C++ gameplay logic, AI racing opponents,
+                    level design, music composition, SFX integration.
+                    <a href="https://github.com/ido-013/SnT" target="_blank">github.com/ido-013/SnT</a>
+                </p>
+            </div>
+            <div class="resume-item">
+                <p>
+                    <b>Main Programmer &amp; Composer &mdash; WWSC</b><br>
+                    2024 &nbsp;&middot;&nbsp; <em>DigiPen Institute of Technology</em><br>
+                    2D platformer written from scratch in C++ with Raylib. Player movement, collision detection,
+                    level progression, and original soundtrack.
+                </p>
+            </div>
+            <div class="resume-item">
+                <p>
+                    <b>WebGL Graphics Portfolio</b><br>
+                    2024 &ndash; Present &nbsp;&middot;&nbsp; <em>DigiPen Institute of Technology</em><br>
+                    Interactive real-time graphics demos: procedural mesh generation, fog shading, toon/cell shading,
+                    shadow mapping, value &amp; Perlin noise.
+                </p>
+            </div>
+            <h3>Experience</h3>
+            <div class="resume-item">
+                <p>
+                    <b>Volunteer Translator (Korean) &mdash; Path of Exile, Grinding Gear Games</b><br>
+                    2017 &ndash; 2019 &nbsp;&middot;&nbsp; <em>Remote</em><br>
+                    Korean localisation of <em>Path of Exile</em>: in-game dialogue, skill descriptions, patch notes.
+                </p>
+            </div>
+            <h3>Skills</h3>
+            <div class="resume-item">
+                <p>
+                    <b>Languages:</b> C++, C, GLSL<br>
+                    <b>Engines &amp; APIs:</b> Unreal Engine 5 (Blueprint &amp; C++), OpenGL, WebGL, Raylib<br>
+                    <b>Tools:</b> Git, Visual Studio, Linux (RedHat / CentOS), Cisco Networking<br>
+                    <b>Other:</b> Game localisation (KO&harr;EN), QA &amp; manual testing, music composition
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="mailto:syb0106@naver.com" class="footer__link">syb0106@naver.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/hyunseok-choi/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/KrAloe" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script>
+    (function () {
+        const canvas = document.getElementById("particle-canvas");
+        const ctx    = canvas.getContext("2d");
+        let mouse    = { x: -9999, y: -9999 };
+        const COUNT  = 110;
+        let particles = [];
+
+        function resize() {
+            canvas.width  = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        function Particle() { this.reset(); }
+        Particle.prototype.reset = function () {
+            this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
+            this.vx=(Math.random()-0.5)*0.45; this.vy=(Math.random()-0.5)*0.45;
+            this.r=Math.random()*2+0.6; this.alpha=Math.random()*0.55+0.3;
+            this.hue=Math.random()*50+170;
+        };
+        Particle.prototype.update = function () {
+            const dx=this.x-mouse.x, dy=this.y-mouse.y;
+            const dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<110){ const f=(110-dist)/110; this.vx+=(dx/dist)*f*0.65; this.vy+=(dy/dist)*f*0.65; }
+            this.vx*=0.97; this.vy*=0.97; this.x+=this.vx; this.y+=this.vy;
+            if(this.x<0) this.x=canvas.width; if(this.x>canvas.width)  this.x=0;
+            if(this.y<0) this.y=canvas.height; if(this.y>canvas.height) this.y=0;
+        };
+        Particle.prototype.draw = function () {
+            ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+            ctx.fillStyle="hsla("+this.hue+",88%,68%,"+this.alpha+")"; ctx.fill();
+        };
+        function drawLines() {
+            for(let i=0;i<particles.length;i++) for(let j=i+1;j<particles.length;j++){
+                const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+                const d=Math.sqrt(dx*dx+dy*dy);
+                if(d<95){ ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y);
+                    ctx.lineTo(particles[j].x,particles[j].y);
+                    ctx.strokeStyle="rgba(22,224,189,"+(1-d/95)*0.2+")";
+                    ctx.lineWidth=0.6; ctx.stroke(); }
+            }
+        }
+        function loop(){ ctx.clearRect(0,0,canvas.width,canvas.height); drawLines(); particles.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(loop); }
+        resize(); window.addEventListener("resize",resize);
+        const sec=canvas.parentElement;
+        sec.addEventListener("mousemove",e=>{const r=canvas.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;});
+        sec.addEventListener("mouseleave",()=>{mouse.x=-9999;mouse.y=-9999;});
+        for(let i=0;i<COUNT;i++) particles.push(new Particle());
+        loop();
+    })();
+    </script>
+</body>
+</html>

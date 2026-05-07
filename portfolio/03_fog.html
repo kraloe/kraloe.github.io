@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../img/face.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fog | Hyunseok Choi</title>
+    <link rel="stylesheet" href="../external/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../img/cout.jpg" alt=""></div>
+        <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html"          class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="../index.html#skills"   class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="../index.html#about"    class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="../index.html#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="../index.html#resume"   class="nav__link">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1 class="section__title section__title--intro">
+            Project <strong>Fog</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">3D Graphics · WebGL</p>
+        <img src="../img/portfolio_thumbnails/03_fog.jpg" alt="Fog project screenshot" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <h2>Project Overview</h2>
+        <p>This project implements two classic fog models in a GLSL fragment shader: Linear fog (remapping depth between near and far planes) and Exponential fog (using an e^(-depth*density) falloff). Both modes blend the fragment colour towards a configurable fog colour based on camera-space depth, simulating atmospheric scattering effects seen in many real-time games.</p>
+
+        <h2>Tasks Completed</h2>
+        <ul>
+            <li>Implemented Linear fog by computing a blend factor from the fragment's eye-space Z depth.</li>
+            <li>Implemented Exponential fog with a density parameter, including the squared-density variant (exp2).</li>
+            <li>Added an interactive UI to switch between fog modes and adjust density / near-far range in real time.</li>
+            <li>Ensured fog is computed in eye/view space to remain camera-independent.</li>
+            <li>Tested on multiple scene objects to validate correct depth ordering.</li>
+        </ul>
+
+        <h2>Reflection</h2>
+        <p>The subtlety here is choosing the right space to compute depth — computing it in world space rather than eye space breaks when the camera moves. Understanding the difference between linear and exponential falloff and when each looks more realistic was a valuable lesson in physically plausible shading.</p>
+    </div>
+
+    <div class="portfolio-item-individual">
+        <h2>Demo</h2>
+        <iframe id="demo" src="../webgl/D03Fog/graphics_fun.html?start=fog" tabindex="-1"></iframe>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:syb0106@naver.com" class="footer__link">syb0106@naver.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/hyunseok-choi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/KrAloe" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
+    </footer>
+    <script src="../js/index.js"></script>
+</body>
+</html>
