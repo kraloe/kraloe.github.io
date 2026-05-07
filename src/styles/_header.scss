@@ -25,34 +25,33 @@
   transform: translate(-50%, -50%);
 
   .profile-img {
-    display: block;
-    margin: 0 auto 20px;
-    width: 120px;  // 크기를 조금 줄였습니다
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 3px solid #FFF;
+    margin-bottom: 20px;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
 
   .site-title {
-    font-size: 32px; // 모바일 크기 축소
+    font-size: 50px;
     display: block;
     line-height: 1;
     color: #FFF;
     @media only screen and (min-width:$cut){
       margin: 0;
-      font-size: 60px; // 데스크탑 크기 축소
+      font-size: 100px;
     }
   }
   .site-description {
-    font-size: 16px; // 설명 텍스트 축소
+    font-size: 20px;
     display: block;
     line-height: 1;
     color: #FFF;
     margin-top: 10px;
     @media only screen and (min-width:$cut){
-      font-size: 24px;
+      font-size: 40px;
     }
   }
 }
